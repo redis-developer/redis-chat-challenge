@@ -85,11 +85,15 @@ const verifyMessages = async () => {
 };
 
 const verifySearch = async () => {
-  // TODO.
-  const userSearchResults = '';
-  const messageSearchResults = '';
+  const userSearchResults = await redisClient.call('FT.SEARCH', 'idx:users', '@firstname:Simon @city:{Nottingham}', 'LIMIT', '0', '999999');
+  const messageSearchResults = await redisClient.call('FT.SEARCH', 'idx:messages', '@channel:{cricket|tech} @username:{wasim}', 'LIMIT', '0', '999999');
 
   try {
+    assert.equal(userSearchResults[0], 1);
+    assert.equal(userSearchResults[2][3], 'Prickett');
+    assert.equal(messageSearchResults[0], 2);
+    assert.equal(messageSearchResults[2][1], 'wasim');
+    assert.equal(messageSearchResults[2][3], 'tech');
     console.log('Search verification successful.');
   } catch (err) {
     console.log('Search verification failed:');
