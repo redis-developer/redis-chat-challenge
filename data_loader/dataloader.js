@@ -13,8 +13,8 @@ const flushDatabase = async () => {
 
 const createIndices = async () => {
   await Promise.all([
-    redisClient.call('FT.CREATE', 'idx:users', 'ON', 'HASH', 'PREFIX', '1', 'users:', 'SCHEMA'),
-    redisClient.call('FT.CREATE', 'idx:messages', 'ON', 'HASH', 'PREFIX', '1', 'message:', 'SCHEMA')  
+    redisClient.call('FT.CREATE', 'idx:users', 'ON', 'HASH', 'PREFIX', '1', 'user', 'SCHEMA', 'firstname', 'TEXT', 'lastname', 'TEXT', 'city', 'TAG', 'SORTABLE', 'country', 'TAG', 'SORTABLE', 'username', 'TAG', 'SORTABLE'),
+    redisClient.call('FT.CREATE', 'idx:messages', 'ON', 'HASH', 'PREFIX', '1', 'message', 'SCHEMA', 'username', 'TAG', 'SORTABLE', 'channel', 'TAG', 'SORTABLE', 'message', 'TEXT')  
   ]);
 };
 
@@ -24,7 +24,7 @@ const loadUserProfiles = async () => {
   for (const user of users) {
     console.log(`Loading user ${user.username}.`);
     await Promise.all([
-      redisClient.hset(`users:${user.username}`, user),
+      redisClient.hset(`user:${user.username}`, user),
       redisClient.sadd('usernames', user.username)
     ]);
   }
@@ -32,7 +32,7 @@ const loadUserProfiles = async () => {
 
 const verifyUserProfiles = async () => {
   const numUsers = await redisClient.scard('usernames');
-  const ada = await redisClient.hgetall(`users:ada`);
+  const ada = await redisClient.hgetall(`user:ada`);
 
   try {
     assert.equal(numUsers, 6);
