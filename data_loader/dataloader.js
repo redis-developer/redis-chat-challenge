@@ -12,7 +12,10 @@ const flushDatabase = async () => {
 };
 
 const createIndices = async () => {
-  // TODO
+  await Promise.all([
+    redisClient.call('FT.CREATE', 'idx:users', 'ON', 'HASH', 'PREFIX', '1', 'users:', 'SCHEMA'),
+    redisClient.call('FT.CREATE', 'idx:messages', 'ON', 'HASH', 'PREFIX', '1', 'message:', 'SCHEMA')  
+  ]);
 };
 
 const loadUserProfiles = async () => {
@@ -43,11 +46,43 @@ const verifyUserProfiles = async () => {
 };
 
 const loadMessages = async () => {
-  // TODO
+  const messages = require('../sample_data/messages.json');
+
+  for (const message of messages) {
+    console.log(`Posting message by ${message.username} to channel ${message.channel}.`);
+    await Promise.all([
+      redisClient.sadd('channels', message.channel),
+      redisClient.xadd(`channel:${message.channel}`, message.id, 'type', 'message'),
+      redisClient.hset(`message:${message.id}`, {
+        username: message.username,
+        channel: message.channel,
+        message: message.message
+      })
+    ]);
+  }
 };
 
 const verifyMessages = async () => {
-  // TODO
+
+  const cricketCount = await redisClient.xlen('channel:cricket');
+  const channelNames = await redisClient.smembers('channels');
+  const cricketMessageId = await redisClient.xrange('channel:cricket', '-', '+', 'count', '1');
+  const techMessage = await redisClient.hgetall('message:1631623314829-0');
+
+  try {
+    assert.equal(cricketCount, 3);
+    assert.equal(channelNames.includes('cricket'), true);
+    assert.equal(channelNames.includes('tech'), true);
+    assert.equal(channelNames.includes('random'), true);
+    assert.equal(channelNames.includes('tennis'), false);
+    assert.equal(cricketMessageId[0][0], '1631623305083-0');
+    assert.equal(techMessage.channel, 'tech');
+    assert.equal(techMessage.username, 'ada');
+    console.log('Message verification successful.');
+  } catch (err) {
+    console.log('Message verification failed:');
+    console.log(err);    
+  }
 };
 
 const verifySearch = async () => {

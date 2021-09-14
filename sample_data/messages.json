@@ -1,0 +1,38 @@
+[
+    {
+        "id": "1631623305083-0",
+        "username": "wasim",
+        "channel": "cricket",
+        "message": "Did you see the test match this weekend?"
+    },
+    {
+        "id": "1631623314829-0",
+        "username": "ada",
+        "channel": "tech",
+        "message": "Really excited for the new Redis release!"
+    },
+    {
+        "id": "1631623324707-0",
+        "username": "wasim",
+        "channel": "tech",
+        "message": "Me too,"
+    },
+    {
+        "id": "1631623332491-0",
+        "username": "woz",
+        "channel": "random",
+        "message": "Warm and sunny here in California today, what's it like where you are?"
+    },
+    {
+        "id": "1631623342013-0",
+        "username": "yaz",
+        "channel": "cricket",
+        "message": "Yes, some incredible batting there."
+    },
+    {
+        "id": "1631623342744-0",
+        "username": "simon",
+        "channel": "cricket",
+        "message": "Fantastic catch to win the game too."
+    }
+]
