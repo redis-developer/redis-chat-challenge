@@ -1,0 +1,44 @@
+[
+    {
+        "firstname": "Wasim",
+        "lastname": "Akram",
+        "city": "Lahore",
+        "country": "Pakistan",
+        "username": "Wasim"
+    },
+    {
+        "firstname": "Simon",
+        "lastname": "Prickett",
+        "city": "Nottingham",
+        "country": "England",
+        "username": "simon"
+    },
+    {
+        "firstname": "Salvatore",
+        "lastname": "Sanfilippo",
+        "city": "Palermo",
+        "country": "Italy",
+        "username": "antirez"
+    },
+    {
+        "firstname": "Yasmin",
+        "lastname": "Khan",
+        "city": "Karachi",
+        "country": "Pakistan",
+        "username": "yaz"
+    },
+    {
+        "firstname": "Steve",
+        "lastname": "Wozniak",
+        "city": "Cupertino", 
+        "country": "United States",
+        "username": "woz"
+    },
+    {
+        "firstname": "Ada",
+        "lastname": "Lovelace",
+        "city": "Ravenshead",
+        "country": "England",
+        "username": "ada"
+    }
+]

@@ -1,0 +1,26 @@
+{
+  "name": "dataloader",
+  "version": "1.0.0",
+  "description": "Loads and verifies some sample data for the Redis chat app challenge.",
+  "main": "dataloader.js",
+  "scripts": {
+    "start": "node dataloader.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redis-developer/redis-chat-challenge.git"
+  },
+  "keywords": [
+    "Redis"
+  ],
+  "author": "Redis Inc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/redis-developer/redis-chat-challenge/issues"
+  },
+  "homepage": "https://github.com/redis-developer/redis-chat-challenge#readme",
+  "dependencies": {
+    "ioredis": "^4.27.9"
+  }
+}
