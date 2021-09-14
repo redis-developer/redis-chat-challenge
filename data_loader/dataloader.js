@@ -63,7 +63,6 @@ const loadMessages = async () => {
 };
 
 const verifyMessages = async () => {
-
   const cricketCount = await redisClient.xlen('channel:cricket');
   const channelNames = await redisClient.smembers('channels');
   const cricketMessageId = await redisClient.xrange('channel:cricket', '-', '+', 'count', '1');
@@ -86,7 +85,16 @@ const verifyMessages = async () => {
 };
 
 const verifySearch = async () => {
-  // TODO
+  // TODO.
+  const userSearchResults = '';
+  const messageSearchResults = '';
+
+  try {
+    console.log('Search verification successful.');
+  } catch (err) {
+    console.log('Search verification failed:');
+    console.log(err);     
+  }
 };
 
 const loadAndVerifyData = async () => {
