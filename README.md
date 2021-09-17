@@ -1,6 +1,6 @@
 # Redis Challenge: Build a Real-Time, Multi-User Chat Platform
 
-Slack, Discord, and WhatsApp have proven that responsive, real-time chat is an essential communication technology. This challenge is an opportunity to build your own real-time chat platform.
+Slack, Discord, and WhatsApp have proven that responsive, real-time chat is an essential communication technology. This challenge is an opportunity to build your own real-time chat platform. [Watch our intro video on YouTube](https://www.youtube.com/watch?v=xKGSAdbTgfU).
 
 ## Why Build a Chat App?
 
