@@ -179,6 +179,13 @@ added 13 packages, and audited 14 packages in 710ms
 found 0 vulnerabilities
 ```
 
+If you're comfortable reading code, take a look at [demo.js](demo.js) which contains an example of how to create a new user and post a new chat message to a channel.  To run this code:
+
+```bash
+$ npm install
+$ npm start
+```
+
 Connect to a Redis instance by creating a new Redis client, specifying the host, port and password to connect to:
 
 ```javascript

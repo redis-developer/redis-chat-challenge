@@ -1,0 +1,26 @@
+{
+  "name": "redis-chat-challenge",
+  "version": "1.0.0",
+  "description": "Redis Chat Challenge",
+  "main": "demo.js",
+  "scripts": {
+    "start": "node demo.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redis-developer/redis-chat-challenge.git"
+  },
+  "keywords": [
+    "Redis"
+  ],
+  "author": "Redis Inc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/redis-developer/redis-chat-challenge/issues"
+  },
+  "homepage": "https://github.com/redis-developer/redis-chat-challenge#readme",
+  "dependencies": {
+    "ioredis": "^4.27.9"
+  }
+}
