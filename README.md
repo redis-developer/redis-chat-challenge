@@ -41,6 +41,7 @@ You should also check out some of the docs and videos below:
 * [ioredis](https://www.npmjs.com/package/ioredis): a Redis client for Node.js
 * [Node.js Redis crash course](https://developer.redis.com/develop/node/node-crash-course/) on Redis Developer
 * [Introduction to Redis Streams](https://redis.io/topics/streams-intro)
+* [Official RediSearch Tutorial](https://github.com/RediSearch/redisearch-getting-started)
 
 **Videos:**
 
