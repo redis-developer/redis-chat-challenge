@@ -537,7 +537,7 @@ To achieve this, we'll need to use the blocking capabilities of the Redis [XREAD
 
 **Note:** Redis blocking commands (such as XREAD with the block option) will block the ioredis client while they are running… no other Redis commands will be executed during this time.  You should create and use a second instance of the ioredis client when calling a blocking command.  
 
-### As a users, I want to see which other users have posted in a channel:
+### As a users, I want to see which users have posted in a channel:
 
 Here, we'll need to use the RediSearch `FT.AGGREGATE` command ([see docs](https://oss.redis.com/redisearch/Commands/#ftaggregate)) to get a de-duplicated list of users that have posted in a given channel.  For example, let's find everyone who has posted in `tech`:
 
